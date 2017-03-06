@@ -3,6 +3,7 @@ package com.syncapse.jenkinsci.plugins.awscloudformationwrapper;
 import com.amazonaws.services.cloudformation.model.Parameter;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.google.common.collect.Lists;
 
 import java.io.IOException;
@@ -45,6 +46,7 @@ public class ParameterUtils {
 
     public static List<Parameter> parse(String jsonString) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.PASCAL_CASE_TO_CAMEL_CASE);
         JavaType type = mapper.getTypeFactory().
             constructCollectionType(ArrayList.class, Parameter.class);
         return mapper.readValue(jsonString, type);

@@ -1,10 +1,10 @@
 [
     {
-        "parameterKey": "KeyPairName",
-        "parameterValue": "MyKey"
+        "ParameterKey": "KeyPairName",
+        "ParameterValue": "MyKey"
     },
     {
-        "parameterKey": "InstanceType",
-        "usePreviousValue": true
+        "ParameterKey": "InstanceType",
+        "UsePreviousValue": true
     }
 ]
